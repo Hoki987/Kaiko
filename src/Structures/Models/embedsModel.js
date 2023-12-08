@@ -15,11 +15,7 @@ const embedsModel = sequelize.define(
         type: {
             type: DataTypes.STRING, // откуда этот эмбед
             allowNull: false
-        },
-        haveEmbeds: {
-            type: DataTypes.BOOLEAN, // есть ли в эмбеде "embeds"
-            allowNull: false
-        },
+        }
     },
     {
         tableName: 'embedsModel',

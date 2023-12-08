@@ -1,5 +1,6 @@
 //===========================================/ Import the modeles \===========================================\\
 const { Client, ContextMenuCommandInteraction, ContextMenuCommandBuilder, ApplicationCommandType, EmbedBuilder } = require("discord.js");
+const { Utility } = require('../../config.js')
 
 //===========================================< Code >===========================\\
 
@@ -17,12 +18,10 @@ module.exports = {
 
     async execute(client, interaction) {
         const message = interaction.targetMember;
-        const userAvatar = interaction.user.username;
         const embed = new EmbedBuilder()
-            .setTitle(`Аватар пользователя: ${message.user.username}`)
+            .setTitle(`Аватар пользователя | ${message.user.username}`)
             .setImage(message.displayAvatarURL({ size: 4096, format: 'png', dynamic: true }))
-            .setFooter({ text: `Выполнил(а): ${userAvatar}` })
-            .setColor(``) // запихнуть цвет из конфига
+            .setColor(Utility.colorDiscord)
         return interaction.reply({
             ephemeral: false,
             embeds: [embed]
