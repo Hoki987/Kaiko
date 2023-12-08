@@ -3,9 +3,10 @@ const { Client, ChatInputCommandInteraction, SlashCommandBuilder, ActionRowBuild
 
 //==========< OTHERS >==========\\
 const embedsModel = require('../../Structures/Models/embedsModel.js');
-const { Emoji, Nabor } = require("../../config.js");
+const { Emoji } = require("../../config.js");
 
 //===========================================< Code >===========================\\
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("recruiting")

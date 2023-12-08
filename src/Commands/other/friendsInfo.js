@@ -1,5 +1,7 @@
 //===========================================/ Import the modeles \===========================================\\
 const { Client, ChatInputCommandInteraction, SlashCommandBuilder, PermissionFlagsBits, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+
+//==========< OTHERS >==========\\
 const embedsModel = require("../../Structures/Models/embedsModel.js");
 
 //===========================================< Code >===========================\\

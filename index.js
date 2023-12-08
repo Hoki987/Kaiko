@@ -33,6 +33,7 @@ const client = new Client({
 client.slashCommands = new Collection();
 client.buttons = new Collection();
 client.events = new Collection();
+client.selectMenu = new Collection();
 
 //======================< Handlers >===================\\
 const Handlers = [

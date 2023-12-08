@@ -6,6 +6,7 @@ const embedsModel = require('../../Structures/Models/embedsModel.js')
 const { Emoji } = require("../../config.js");
 
 //===========================================< Code >===========================\\
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("reembed")

@@ -6,6 +6,7 @@ const embedsModel = require('../../Structures/Models/embedsModel.js');
 const { Emoji } = require("../../config.js");
 
 //===========================================< Code >===========================\\
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("stuff")
@@ -24,44 +25,44 @@ module.exports = {
             components: [
                 new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
-                        .setCustomId("naborMenu_stuffNabor")
+                        .setCustomId("naborMenuselect_stuffNaborMain")
                         .setPlaceholder("Выбери интересующую тебя роль")
                         .addOptions(
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Контрол")
                                 .setEmoji(Emoji.NaborControl)
                                 .setDescription("Модерация войсов.")
-                                .setValue("select_ControlModNab"),
+                                .setValue("naborMenuselect_ControlModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Ассистент")
                                 .setEmoji(Emoji.NaborAssist)
                                 .setDescription("Модерация чатов.")
-                                .setValue("select_AssistModNab"),
+                                .setValue("naborMenuselect_AssistModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Ивентер")
                                 .setEmoji(Emoji.NaborEvent)
                                 .setDescription("Организаторы мероприятий.")
-                                .setValue("select_EventModNab"),
+                                .setValue("naborMenuselect_EventModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Ведущий")
                                 .setEmoji(Emoji.NaborMafia)
                                 .setDescription("Организаторы столов по мафии и бункеру.")
-                                .setValue("select_MafiaModNab"),
+                                .setValue("naborMenuselect_MafiaModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Клозер")
                                 .setEmoji(Emoji.NaborClose)
                                 .setDescription("Организаторы игровых мероприятий.")
-                                .setValue("select_CloseModNab"),
+                                .setValue("naborMenuselect_CloseModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Креатив")
                                 .setEmoji(Emoji.NaborCreative)
                                 .setDescription("Организаторы творчества.")
-                                .setValue("select_CreativeModNab"),
+                                .setValue("naborMenuselect_CreativeModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Контентер")
                                 .setEmoji(Emoji.NaborContent)
                                 .setDescription("Ведение социальных сетей сервера.")
-                                .setValue("select_ContentModNab"),
+                                .setValue("naborMenuselect_ContentModNab"),
                         )
                 )
             ]

@@ -2,10 +2,11 @@
 const { Client, ChatInputCommandInteraction, SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require("discord.js");
 
 //==========< OTHERS >==========\\
-const { Emoji, Url } = require("../../config.js");
 const embedsModel = require("../../Structures/Models/embedsModel.js");
+const { Emoji, Url } = require("../../config.js");
 
 //===========================================< Code >===========================\\
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("info")
@@ -119,24 +120,24 @@ module.exports = {
                             components: [
                                 new ActionRowBuilder().addComponents(
                                     new StringSelectMenuBuilder()
-                                        .setCustomId("listEvent")
+                                        .setCustomId("infoPanelselect_listEventMain")
                                         .setPlaceholder("Выбери интересующую тебя роль")
                                         .addOptions(
                                             new StringSelectMenuOptionBuilder()
                                                 .setLabel("Ивентеры")
                                                 .setEmoji(Emoji.NaborEvent)
                                                 .setDescription("Список правил ивентов, связанных с веткой")
-                                                .setValue("select_EventList"),
+                                                .setValue("infoPanelselect_EventList"),
                                             new StringSelectMenuOptionBuilder()
                                                 .setLabel("Ведущие")
                                                 .setEmoji(Emoji.NaborMafia)
                                                 .setDescription("Список правил ивентов, связанных с веткой")
-                                                .setValue("select_MafiaList"),
+                                                .setValue("infoPanelselect_MafiaList"),
                                             new StringSelectMenuOptionBuilder()
                                                 .setLabel("Клозеры")
                                                 .setEmoji(Emoji.NaborClose)
                                                 .setDescription("Список правил ивентов, связанных с веткой")
-                                                .setValue("select_CloseList")
+                                                .setValue("infoPanelselect_CloseList")
                                         )
                                 )
                             ]
@@ -149,24 +150,24 @@ module.exports = {
                             components: [
                                 new ActionRowBuilder().addComponents(
                                     new StringSelectMenuBuilder()
-                                        .setCustomId("EventHelp")
+                                        .setCustomId("infoPanelselect_EventHelpMain")
                                         .setPlaceholder("Выбери интересующую тебя роль")
                                         .addOptions(
                                             new StringSelectMenuOptionBuilder()
                                                 .setLabel("Ивентеры")
                                                 .setEmoji(Emoji.NaborEvent)
                                                 .setDescription("Полезная информация, связанная с веткой")
-                                                .setValue("select_EventHelp"),
+                                                .setValue("infoPanelselect_EventHelp"),
                                             new StringSelectMenuOptionBuilder()
                                                 .setLabel("Ведущие")
                                                 .setEmoji(Emoji.NaborMafia)
                                                 .setDescription("Полезная информация, связанная с веткой")
-                                                .setValue("select_MafiaHelp"),
+                                                .setValue("infoPanelselect_MafiaHelp"),
                                             new StringSelectMenuOptionBuilder()
                                                 .setLabel("Клозеры")
                                                 .setEmoji(Emoji.NaborClose)
                                                 .setDescription("Полезная информация, связанная с веткой")
-                                                .setValue("select_CloseHelp")
+                                                .setValue("infoPanelselect_CloseHelp")
                                         )
                                 )
                             ]

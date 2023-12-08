@@ -22,6 +22,12 @@ async function loadCommands(client, color) {
         client.buttons.set(command.data.name, command);
     };
 
+    const selectMenuFolder = readdirSync(`${process.cwd()}/src/SelectMenu`);
+    for (const file of selectMenuFolder) {
+        const command = require(`${process.cwd()}/src/SelectMenu/${file}`);
+        client.selectMenu.set(command.data.name, command);
+    };
+
     client.application.commands.set(publicCommandsArray).then(
         console.log(`${color.bold.green(`[GLOBAN COMMANDS]`)}` + `[${publicCommandsArray.length}]`.cyan + `Successfully loaded!`.yellow)
     );

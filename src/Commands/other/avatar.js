@@ -1,6 +1,8 @@
 //===========================================/ Import the modeles \===========================================\\
 const { Client, ContextMenuCommandInteraction, ContextMenuCommandBuilder, ApplicationCommandType, EmbedBuilder } = require("discord.js");
-const { Utility } = require('../../config.js')
+
+//==========< OTHERS >==========\\
+const { Utility } = require('../../config.js');
 
 //===========================================< Code >===========================\\
 

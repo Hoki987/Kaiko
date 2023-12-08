@@ -11,6 +11,25 @@ const Url = {
     CreativeRules: "https://discord.com/channels/822354240713261068/1143562380882751659",
     CreativeHelp: "https://discord.com/channels/822354240713261068/1143562420615401634",
 }
+
+const RoleID = {
+    Dota: "867411578838843433",
+    Cs: "867411587996057610",
+    Valorant: "867411593351397376",
+    Minecraft: "867411616822591528",
+    Lol: "1141778163576340500",
+    acquaintance: '1143698939397292082',
+
+    AnNabor: "866391559510163467",
+    AnKino: "939304687486779412",
+    AnCreative: "957323257193844806",
+    AnBrowser: "866317682286526473",
+    AnNastolki: "931941549263167588",
+    AnClose: "931940698490556446",
+    AnMafia: "867412722864750602",
+    AnBunker: "956585834302287952"
+}
+
 const Emoji = {
     PanelRules: "<:META_rules:1105566996751466618>",
     PanelCMD: "<:META_utility:1105566989981847553>",
@@ -58,7 +77,8 @@ const Emoji = {
     BunkerAn: "<:bunkermeta:965530345363636225>",
     MafiaAn: "<:mafiameta:965530371120836608>",
 }
-const info = {
+const info =
+{
     MainRules: [
         {
             "color": 2829617,
@@ -258,6 +278,211 @@ const info = {
             }
         }
     ],
+
+
+    EventRules: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1129389401630314507/1129398197236813925/event_eventer.png?width=1440&height=428"
+            }
+        },
+        {
+            "title": "<:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045>Список ивентов | META",
+            "description": "**Привет!** Все ивенты __**кликабельны**__. Ссылка ведёт на **Google**\n документ с **правилами** и описанием ивента.",
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        },
+        {
+            "color": 2829617,
+            "fields": [
+                {
+                    "name": "ㅤ",
+                    "value": "[7 чудес: Архитекторы](https://docs.google.com/document/d/1G_j55M5CfLrAu382bnFPyGwEuYDpqyNNlC0gFP0tWiM/edit?usp=sharing)\n[Битва на пастбище](https://docs.google.com/document/d/1JTXTVLXvbKHgMvUWyGAFRiXOYQQuImxJLAk6Krl6zdk/edit?usp=sharing)\n[Без остановки](https://docs.google.com/document/d/1MWrYj3F6A-qdD7fSvogki3ZQOVgO62l9pa4nFXnlWkY/edit?usp=sharing)\n[Бабочки](https://docs.google.com/document/d/13fvGE4rUWl6kjKj6jhH6Li19uGTu4S-1D7vSuFMZcVM/edit?usp=sharing)\n[Гномы-вредители](https://docs.google.com/document/d/1TL3Ex4dwN3jprJs4ZCo-SwZPEsrN-1mCxysh4GTivEA/edit?usp=sharing)\n[Каменный век](https://docs.google.com/document/d/15AExulcC-s4XaFtV5Fh3ue1agzVPTy9n4r2d5bfAmJs/edit?usp=sharing)\n[Каркассон](https://docs.google.com/document/d/1YvKOiIdGYDnXtGSG8qPk-SVglFWg57lUzusllzzXTxQ/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Колоретто](https://docs.google.com/document/d/1FJtBhRfS1xh3MepQzhLqwGmqyX9r2HAk1dXNeUTvf8Y/edit?usp=sharing)\n[Корова](https://docs.google.com/document/d/1BXyYjllxVSZrQv9PFo6PMxCe_eAYA_E5OmnZq7wyNM4/edit?usp=sharing)\n[Кубички](https://docs.google.com/document/d/1Z22C0jUNwpT9W_pXNfUEKO4-3Es9MzO3sfOcSUpYN2g/edit?usp=sharing)\n[Сыщики](https://docs.google.com/document/d/1HbbhSRoqDlIgTKmic7J3hEh9dcVXjNDO27WlUlxCOCs/edit?usp=sharing)\n[Соло](https://docs.google.com/document/d/1FV4rSz_5WSBzEX75hqgIxNxZaiLNuZ-BsUY-HDGDQTg/edit?usp=sharing)\n[Своя игра](https://docs.google.com/document/d/1L8QNhKsnlRn9ZzJBKqGMR7q6HvJ0SnGQYoR97E-Nfoc/edit?usp=sharing)\n[Суши карты](https://docs.google.com/document/d/1OL50cRIhXJyREheCwCV5iVv9DODjgzDDXmq9akWaSww/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Слова из слов](https://docs.google.com/document/d/1QinyGfcr4Cq3t6-G2qyAVbHdrq1vWlaAdJM0s_enhlg/edit?usp=sharing)\n[Секретный Гитлер](https://docs.google.com/document/d/1YjdnTL0FFyTdJ1ae9V_K4Ej6rW77D44FSMbGDFF8pkc/edit?usp=sharing)\n[Смотрим вместе](https://docs.google.com/document/d/1i1aIINg_Ty22fOJzWI9UTQm08F7cqgPTX6IUc4CL3jQ/edit?usp=sharing)\n[Кто я](https://docs.google.com/document/d/1xwOYbCdYQHBcJV_e6-kCdAhytyAwFsrIcWUTuA5DexQ/edit?usp=sharing)\n[Монополия](https://docs.google.com/document/d/13HxOIP4sCqmEqgIfvrhUtXspc5alahy-H-b8-vCCHIU/edit?usp=sharing)\n[Угадайка](https://docs.google.com/document/d/1b7ShBDnLNKNGrM6uYlkUAQzk3h63YZWJEGzmNFBwcLk/edit?usp=sharing)\n[Шляпа](https://docs.google.com/document/d/1Mtu8J8Lfv1k7fo_FHKPPx-F4BcCdxs0VHocKgNLj7SI/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Сломанный телефон](https://docs.google.com/document/d/1Z57JqNT8roBG6cBTLmgrA5Lw_AlrvjaY0BDZhOdp0Cc/edit?usp=sharing)\n[Такеноко](https://docs.google.com/document/d/1lZUtg8dpiL7x1rcmngYgeAuQbAoVOHTxUg2W-Tkir-k/edit?usp=sharing)\n[Токайдо](https://docs.google.com/document/d/1Q1eIazvlZAeRQ2oVlNMkMu46a-gUMw0_VrtSNNVUzU8/edit?usp=sharing)\n[Ток](https://docs.google.com/document/d/1eHSNOhnVNYzHI3P00sLWeKaZWpQ4w0qxo4g0DY1OLTU/edit?usp=sharing)\n[Покер на костях](https://docs.google.com/document/d/1Sj0cqmjJnAnRUn8uwUwalMqd0GUa_d5GdGBqEiV5hsA/edit?usp=sharing)\n[Codenames](https://docs.google.com/document/d/19IdFJsL0IwFMYAiZhSF5HHin0-0rp1pgJJo5OsTphv4/edit?usp=sharing)\n[HaxBall](https://docs.google.com/document/d/18GhgSJRtSXVZJAxv4092wxz-AYta3yzYJyJmtUvfZ1w/edit?usp=sharing)\n[Цитадели](https://docs.google.com/document/d/1Tk_On-fJozn_4o-NZJRaJyMMCE1I0vm2kO2gQyCWjdI/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Jackbox](https://docs.google.com/document/d/1yrkQVJpZ98IMrzjl9SGklt3LxsFmArCTXRYY3nMEsjw/edit?usp=sharing)\n[Данетки](https://docs.google.com/document/d/1Zlkn1U5M3Ya2qUO7lNggSG7vQV-36uwVaAh-FP-Emkw/edit?usp=sharing)\n[Декодер](https://docs.google.com/document/d/1xGaJe6S8Qk5STGhy-DY-kBqjC_PGBSTKeilzc6LPYbc/edit?usp=sharing)\n[Дурак](https://docs.google.com/document/d/12P7igjE2BABwNdS7phk-UnXS-QuW4DPMMy-PEhA0C1Y/edit?usp=sharing)\n[Загадки](https://docs.google.com/document/d/1q-ujPkF9_pDGT4oWH9f3_KPdGujsn_os4pVHKHR6i6E/edit?usp=sharing)\n[Имаджинариум](https://docs.google.com/document/d/1SdP58DaCV6y1ic72lCFf4WKOSnzalrRGofPn_S9Avgc/edit?usp=sharing)\n[Намек понял](https://docs.google.com/document/d/11E7aIRgD-itmz1WYOa_AJvbxj4wYZDQcBK3Z3X4pvb4/edit?usp=sharing)\n[Шпион](https://docs.google.com/document/d/1xdi-g-8jY73teNR2Nq5Fgo4xZXtMpBu1gxF4Aqrtd2k/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Пазлы](https://docs.google.com/document/d/1uSBxAZniUkUiZgKg-MUB_CIcGmFtztQD3lhmbQLMxIM/edit?usp=sharing)\n[Покер](https://docs.google.com/document/d/1OYahmE_pt3T_55zrkjiYLPla4BA19uBkz-R-O5TNJpg/edit?usp=sharing)\n[Криминалист](https://docs.google.com/document/d/1PC-G0HzX7v0lBi5FKOuDMYDagE-AC6qH8Wg7XKNl6e8/edit?usp=sharing)\n[Крокодил](https://docs.google.com/document/d/1lh9EJLi-Gi4HKPt4PKdHmGKkHHC0bsAxivgqka7pLrk/edit?usp=sharing)",
+                    "inline": true
+                }
+            ],
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        }
+    ],
+    MafiaRules: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1129389401630314507/1129398195278073968/event_ved.png?width=1440&height=428"
+            }
+        },
+        {
+            "title": "<:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045>Список ивентов | META",
+            "description": "**Привет!** Все ивенты __**кликабельны**__. Ссылка ведёт на **Google**\n документ с **правилами** и описанием ивента.",
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        },
+        {
+            "color": 2829617,
+            "fields": [
+                {
+                    "name": "ㅤ",
+                    "value": "[Мафия город](https://docs.google.com/document/d/1rJnVYjazxKjj0wbjgCB-AlghW_vvZfgXgDKorS-16ns/edit?usp=sharing)\n[Мафия классика](https://docs.google.com/document/d/1tCDQvhRt2bHBdhdtlVvtCEddg41sshc_KPtzGrnk8KY/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Бункер](https://docs.google.com/document/d/1-urk6w7mGP-JehBUFeAsvf3DrzJ8k2QMJfwhZLusbKY/edit?usp=sharing)\n[Бункер-Апокалипсис](https://docs.google.com/document/d/1bBUY8bzJ5YfwGKK-At8c4-wuWVcuNLvOQ4aIZJKthLk/edit)\n[Бункер Онлайн](https://docs.google.com/document/d/1aHJ_pitSErlWUyV3n5hsTFRW65xu4WeYeJfN-rTwD4M/edit)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "[Остров](https://docs.google.com/document/d/14l8lOB1QLqdcQ9mF5QeQ68I9PrLI_8KthYQ2O69RGEc/edit?usp=sharing)\n[Жестокие игры](https://docs.google.com/document/d/1iIb-ZwaPdgmtteDuDJDZpsB7u5AdZZzahKJ48Q4jBQk/edit)",
+                    "inline": true
+                }
+            ],
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        }
+    ],
+    CloseRules: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1129389401630314507/1129398195676520601/event_closer.png?width=1440&height=428"
+            }
+        },
+        {
+            "title": "<:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045><:meta_fon:1103228292154282045>Список ивентов | META",
+            "description": "**Привет!** Все ивенты __**кликабельны**__. Ссылка ведёт на **Google**\n документ с **правилами** и описанием ивента.",
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        },
+        {
+            "color": 2829617,
+            "fields": [
+                {
+                    "name": "ㅤ",
+                    "value": "[Dota close](https://docs.google.com/document/d/18knsfwAZZsnxfJASr6blCCLG97DcLL8pfXHM4f_dg1E/edit?usp=sharing)\n[CS:GO close](https://docs.google.com/document/d/1rBxKRdlCfnLw6WrtJ0bwuwtDT5JM7JEtYREkX2663Xg/edit?usp=sharing)",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "ㅤ",
+                    "inline": true
+                },
+                {
+                    "name": "ㅤ",
+                    "value": "ㅤㅤㅤㅤㅤㅤㅤㅤ[Valorant close](https://docs.google.com/document/d/1vmihjoubk1yJLjQnp4Unr69TozxLGnRZyKAPsijILqw/edit?usp=sharing)\nㅤㅤㅤㅤㅤㅤㅤㅤ[Lol close](https://docs.google.com/document/d/1WpST_XtX1M90j8nnPW0fPYwG5as_ejoz-XEnLGnhqhI/edit?usp=sharing)",
+                    "inline": true
+                }
+            ],
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        }
+    ],
+
+
+    ClanRules: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1129389401630314507/1129389463114616872/clans_rules.png"
+            }
+        },
+        {
+            "title": "<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012>**Правила кланов**",
+            "description": "<:tochka1:1105578682631852146> Внутриклановые чаты модерируются по правилам \ntos, 2.4 и 3.7.\n\n<:tochka1:1105578682631852146> В разборе конфликтов между кланами участвуют не только ответственный за кланы, но и лидеры/зам. лидера кланов.\n\n<:tochka1:1105578682631852146> Запрещено использование багов системы в личных целях.\n\n<:tochka1:1105578682631852146> Запрещено ставить оскорбительные и/или приближенные к ролям стаффа и/или нарушающие правила сервера, дискорда названия кланов.\n\n<:tochka1:1105578682631852146> Лидер и заместитель клана может кикнуть участника по собственному желанию.\n\n<:tochka1:1105578682631852146> Запрещено находиться в двух разных или тех же кланах с основы и твинка, а также принятие в клан человека с баном.\n\n<:tochka1:1105578682631852146> В категории ``КЛАН НАБОРЫ`` запрещено заниматься чем либо, кроме самого набора в клан.\n\n<:tochka1:1105578682631852146> Запрещена навязчивая агитация и реклама \nвступления в клан.",
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        }
+    ],
+    ClanCMD: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1129389401630314507/1129389463785705573/clans_comands.png"
+            }
+        },
+        {
+            "title": "<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012>**Команды кланового бота**",
+            "description": "**(некоторые из команд доступны только после верификации)**\n\n<:fon:1105454056748626012>После создания клана в нем сразу присутствует: \n<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012>``50 мест + 1 слот на зама``\n\n<:tochka1:1105578682631852146>**/clan edit**\n<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012> — изменить цвет — ``2000 конфет``\n<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012> — название — ``3000 конфет``\n<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012> — докупить слоты — ``5 слотов - 1500 конфет``\n<:tochka1:1105578682631852146>**/clan deposit (кол-во юки)** — пополнить казну.\n<:tochka1:1105578682631852146>**/clan shop** — магазин.\n<:tochka1:1105578682631852146>**/clan buy badge** — приобрести новый бейдж.\n<:tochka1:1105578682631852146>**/clan buy profile** — приобрести новый профиль.\n<:tochka1:1105578682631852146>**/clan buy deputy** — приобрести слот заместителя(max 3) — \n<:fon:1105454056748626012><:fon:1105454056748626012>``1 слот - 2500 конфет``\n<:tochka1:1105578682631852146>**/clan buy voice** — приобрести дополнительный войс канал.\n<:tochka1:1105578682631852146>**/clan v_list** — информация о доступах в голосовые каналы.",
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        }
+    ],
+    ClanHelp: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1129389401630314507/1129389463441789048/clans_utility.png"
+            }
+        },
+        {
+            "title": "<:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012><:fon:1105454056748626012>**Общая информация**",
+            "description": "<:fon:1105454056748626012>**Поддержание клана:**\n<:tochka1:1105578682631852146>Клану необходимо набирать не менее **500** часов в месяц.\n\n<:fon:1105454056748626012>**Верификация:**\nВерификация — это процесс, после которого у клана появляется **полный доступ** к функционалу.\n<:tochka1:1105578682631852146>Необходимо **25000**<:konfeta:1105580295652130936> в казне клана, **500** часов онлайна и заполнить **заявку** по кнопке **ниже.**\n\n**Технические вопросы, найденные баги, предложения по боту, а также вопросы, идеи и предложения по Кланам: <@270664753129455626>\nЖалобы на Кланы: <@484810299984183297>**",
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/772218365413818428/1079003352408543302/11112.png"
+            }
+        }
+    ],
+
+    acquaintance: [
+        {
+            "color": 2829617,
+            "image": {
+                "url": "https://cdn.discordapp.com/attachments/1129389401630314507/1171539603799421049/love.png?ex=655d0c47&is=654a9747&hm=f4176e210553a1e9e57597b7c2633e71505759b2078a4454d4b10ace46d90fac&"
+            }
+        },
+        {
+            "title": "**Соглашение перед использованием**",
+            "description": "- **Общие правила чатов:**\n<:fon_meta:1105454056748626012><a:heartdotmeta00:965684404850679837>Уважайте себя и других пользователей.\n<:fon_meta:1105454056748626012><a:heartdotmeta01:965684412828237934>Чаты придерживаются всех правил сервера.\n<:fon_meta:1105454056748626012><a:heartdotmeta02:965684420696768512>Запрещено несоответствие тематики чатов.\n<:fon_meta:1105454056748626012><a:heartdotmeta03:965684428271665182>Запрещено писать анкеты большим шрифтом.\n<:fon_meta:1105454056748626012><a:heartdotmeta04:965684435741716510>Ответы пользователей должны происходить в ЛС.\n<:fon_meta:1105454056748626012><a:heartdotmeta05:965684442704269412> Запрещено использование чата людям меньше 18 лет!\n\n- **Примечание:**\n<:fon_meta:1105454056748626012><a:heartdotmeta06:965684449125761064>В чатах есть дополнительные правила, обязательно прочитайте их.\n```За нарушение правил, модерация сервера оставляет за собой право удалить ваше сообщение, и выдать вам наказание в соответствии с правилами сервера.```",
+            "color": 2829617,
+            "footer": {
+                "text": "Чтобы получить доступ к поиску, вам нужно нажать на кнопку ниже!"
+            },
+            "image": {
+                "url": "https://media.discordapp.net/attachments/1161663603628331149/1169901821322604574/1.png?ex=655716f9&is=6544a1f9&hm=d93aedd4330d9dd80d65aa7b69cd78cfe3de1dff8655a2feb9647997949f728c&=&width=1440&height=33"
+            }
+        }
+    ]
+
 }
 const Nabor = {
     Main: [
@@ -515,4 +740,4 @@ const roles = {
         }
     ]
 }
-module.exports = { Utility, Url, Emoji, info, Nabor, roles }
+module.exports = { Utility, Url, Emoji, info, Nabor, roles, RoleID }

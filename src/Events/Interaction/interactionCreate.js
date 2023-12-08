@@ -59,5 +59,20 @@ module.exports = {
                 console.log(`${color.bold.red(`[INTERACTION > BUTTON : ERROR]`)}` + `${error}.`.bgRed);
             }
         };
+        if (interaction.isStringSelectMenu()) {
+            const command = client.selectMenu.get(interaction.customId.split('_')[0]);
+            console.log(interaction.customId);
+            if (!command) {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "This Command is outdated!"
+                });
+            };
+            try {
+                command.execute(client, interaction);
+            } catch (error) {
+                console.log(`${color.bold.red(`[INTERACTION > STRINGSELECTMENU : ERROR]`)}` + `${error}.`.bgRed);
+            }
+        };
     },
 };
