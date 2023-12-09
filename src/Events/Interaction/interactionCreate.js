@@ -61,7 +61,6 @@ module.exports = {
         };
         if (interaction.isStringSelectMenu()) {
             const command = client.selectMenu.get(interaction.customId.split('_')[0]);
-            console.log(interaction.customId);
             if (!command) {
                 interaction.reply({
                     ephemeral: true,
@@ -72,6 +71,20 @@ module.exports = {
                 command.execute(client, interaction);
             } catch (error) {
                 console.log(`${color.bold.red(`[INTERACTION > STRINGSELECTMENU : ERROR]`)}` + `${error}.`.bgRed);
+            }
+        };
+        if (interaction.isModalSubmit()) {
+            const command = client.modalSubmits.get(interaction.customId.split('_')[0]);
+            if (!command) {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "This Command is outdated!"
+                });
+            };
+            try {
+                command.execute(client, interaction);
+            } catch (error) {
+                console.log(`${color.bold.red(`[INTERACTION > MODALSUBMIT : ERROR]`)}` + `${error}.`.bgRed);
             }
         };
     },

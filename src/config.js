@@ -1,5 +1,36 @@
+const ChannelID = {
+    META: "822354240713261068",
+    Nabor: "993248594222121010",
+    ClanRequest: "1105643298787438622",
+
+    Control: '',
+    Assist: '1181219422518657065',
+    Event: '',
+    Mafia: '',
+    Bunker: '',
+    Close: '',
+    Creative: '',
+    Content: '',
+
+    EruditRequest: '',
+    CloseRoleRequest: '',
+    MafiaRoleRequest: '',
+    OblachkoRequest: '',
+    DubberRequest: '',
+    MusicRequest: '',
+    PainterRequest: '',
+    ReaderRequest: '',
+
+    //CommentRequest: "1107977095851810850"
+}
+
 const Utility = {
     colorDiscord: 2829617,
+    colorYellow: 16758784,
+    colorRed: 13697024,
+    colorGreen: 435462,
+
+    iconMETA: 'https://cdn.discordapp.com/attachments/1129389401630314507/1183105645432537199/icon.gif?ex=65871ffe&is=6574aafe&hm=3c59fb96f22bd1567eaa7251d1d0bcc9b0d49215a3fe0af89d6be60929e69a07&'
 }
 const Url = {
     ClanRules: "https://discord.com/channels/822354240713261068/1143999035095646218",
@@ -13,6 +44,15 @@ const Url = {
 }
 
 const RoleID = {
+    ControlMentor: '',
+    AssistMentor: '1154731145552986112',
+    EventMentor: '',
+    MafiaMentor: '',
+    BunkerMentor: '',
+    CloseMentor: '',
+    CreativeMentor: '',
+    ContentMentor: '',
+
     Dota: "867411578838843433",
     Cs: "867411587996057610",
     Valorant: "867411593351397376",
@@ -740,4 +780,4 @@ const roles = {
         }
     ]
 }
-module.exports = { Utility, Url, Emoji, info, Nabor, roles, RoleID }
+module.exports = { Utility, Url, Emoji, info, Nabor, roles, RoleID, ChannelID }

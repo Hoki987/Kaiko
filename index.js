@@ -34,6 +34,7 @@ client.slashCommands = new Collection();
 client.buttons = new Collection();
 client.events = new Collection();
 client.selectMenu = new Collection();
+client.modalSubmits = new Collection();
 
 //======================< Handlers >===================\\
 const Handlers = [

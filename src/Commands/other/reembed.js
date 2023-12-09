@@ -58,10 +58,6 @@ module.exports = {
                                     .setLabel("Контентер")
                                     .setEmoji(Emoji.NaborContent)
                                     .setValue("select_ContentReemRec"),
-                                new StringSelectMenuOptionBuilder()
-                                    .setLabel("Очистить выбор")
-                                    .setEmoji(Emoji.Trash)
-                                    .setValue("select_ReemClear")
                             )
                     )
             ]

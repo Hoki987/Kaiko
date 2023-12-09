@@ -28,6 +28,12 @@ async function loadCommands(client, color) {
         client.selectMenu.set(command.data.name, command);
     };
 
+    const modalSubmitFolder = readdirSync(`${process.cwd()}/src/ModalSubmits`);
+    for (const file of modalSubmitFolder) {
+        const command = require(`${process.cwd()}/src/ModalSubmits/${file}`);
+        client.modalSubmits.set(command.data.name, command);
+    };
+
     client.application.commands.set(publicCommandsArray).then(
         console.log(`${color.bold.green(`[GLOBAN COMMANDS]`)}` + `[${publicCommandsArray.length}]`.cyan + `Successfully loaded!`.yellow)
     );

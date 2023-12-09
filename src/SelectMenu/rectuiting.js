@@ -7,7 +7,7 @@ const embedsModel = require('../Structures/Models/embedsModel.js');
 //===========================================< Code >===========================\\
 module.exports = {
     data: {
-        name: 'naborMenuselect'
+        name: 'naborMenu'
     },
 
     /**
@@ -88,7 +88,20 @@ module.exports = {
         //             break;
         //     }
         // }
-        // console.log(subType);
+
+        await interaction.reply({
+            ephemeral: true,
+            embeds: embed,
+            components: [
+                new ActionRowBuilder()
+                    .addComponents(
+                        new ButtonBuilder()
+                            .setCustomId("ControlModRecSEND")
+                            .setLabel("Запостить")
+                            .setStyle(ButtonStyle.Success),
+                    )
+            ]
+        })
         if (subType === 'MafiaModNab') {
             await interaction.reply({
                 ephemeral: true,
