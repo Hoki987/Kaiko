@@ -12,6 +12,10 @@ const blackListNabor = sequelize.define(
             type: DataTypes.STRING, // кому выдавали блокировку
             allowNull: false,
         },
+        category: {
+            type: DataTypes.STRING, // категория стаффа
+            allowNull: true
+        },
         reason: {
             type: DataTypes.STRING, // причина блокирования
         },

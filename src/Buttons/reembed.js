@@ -65,7 +65,7 @@ module.exports = {
                     ephemeral: true,
                     embeds: [new EmbedBuilder().setTitle('Эмбед').setDescription('```json\n' + `${JSON.stringify(JSON.parse(findEmbed.embed), null, 2)}` + '\n```')]
                 })
-        break;
+                break;
+        }
     }
-}
 }
