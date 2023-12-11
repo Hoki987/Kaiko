@@ -42,7 +42,7 @@ module.exports = {
             case 'CreativeModNab':
                 content.push('Креатива')
                 break;
-            case 'ContenterModNab':
+            case 'ContentModNab':
                 content.push('Контентера')
                 break;
         }

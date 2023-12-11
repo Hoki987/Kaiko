@@ -20,105 +20,75 @@ module.exports = {
         const [, type] = interaction.customId.split('_')
         const [, subType] = interaction.values[0].split('_')
 
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Control'
-        // })
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Assist'
-        // })
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Event'
-        // })
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Mafia'
-        // })
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Close'
-        // })
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Creative'
-        // })
-        // await embedsModel.create({
-        //     executor: interaction.user.id,
-        //     embed: '',
-        //     type: 'nabor_Contenter'
-        // })
-
-        // if (type === 'stuffNaborMain') {
-        //     switch (subType) {
-        //         case 'ControlModNab':
-        //             const controlEmbed = await embedsModel.findOne({ where: { type: 'nabor_Control' } })
-        //             embed = JSON.parse(controlEmbed.embed)
-        //             break;
-        //         case 'AssistModNab':
-        //             const assistEmbed = await embedsModel.findOne({ where: { type: 'nabor_Assist' } })
-        //             embed = JSON.parse(assistEmbed.embed)
-        //             break;
-        //         case 'EventModNab':
-        //             const eventEmbed = await embedsModel.findOne({ where: { type: 'nabor_Event' } })
-        //             embed = JSON.parse(eventEmbed.embed)
-        //             break;
-        //         case 'MafiaModNab':
-        //             const mafiaEmbed = await embedsModel.findOne({ where: { type: 'nabor_Mafia' } })
-        //             embed = JSON.parse(mafiaEmbed.embed)
-        //             break;
-        //         case 'CloseModNab':
-        //             const closeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Close' } })
-        //             embed = JSON.parse(closeEmbed.embed)
-        //             break;
-        //         case 'CreativeModNab':
-        //             const creativeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Creative' } })
-        //             embed = JSON.parse(creativeEmbed.embed)
-        //             break;
-        //         case 'ContentModNab':
-        //             const contenterEmbed = await embedsModel.findOne({ where: { type: 'nabor_Contenter' } })
-        //             embed = JSON.parse(contenterEmbed.embed)
-        //             break;
-        //     }
-        // }
-        // console.log(subType);
+        if (type === 'stuffNaborMain') {
+            switch (subType) {
+                case 'ControlModNab':
+                    const controlEmbed = await embedsModel.findOne({ where: { type: 'nabor_Control' } })
+                    embed = JSON.parse(controlEmbed.embed)
+                    break;
+                case 'AssistModNab':
+                    const assistEmbed = await embedsModel.findOne({ where: { type: 'nabor_Assist' } })
+                    embed = JSON.parse(assistEmbed.embed)
+                    break;
+                case 'EventModNab':
+                    const eventEmbed = await embedsModel.findOne({ where: { type: 'nabor_Event' } })
+                    embed = JSON.parse(eventEmbed.embed)
+                    break;
+                case 'MafiaModNab':
+                    const mafiaEmbed = await embedsModel.findOne({ where: { type: 'nabor_Mafia' } })
+                    embed = JSON.parse(mafiaEmbed.embed)
+                    break;
+                case 'CloseModNab':
+                    const closeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Close' } })
+                    embed = JSON.parse(closeEmbed.embed)
+                    break;
+                case 'CreativeModNab':
+                    const creativeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Creative' } })
+                    embed = JSON.parse(creativeEmbed.embed)
+                    break;
+                case 'ContentModNab':
+                    const contenterEmbed = await embedsModel.findOne({ where: { type: 'nabor_Contenter' } })
+                    embed = JSON.parse(contenterEmbed.embed)
+                    break;
+            }
+        }
+        let components;
         if (subType === 'MafiaModNab') {
-            await interaction.reply({
-                ephemeral: true,
-                embeds: embed,
-                components: [
-                    new ActionRowBuilder().addComponents(
-                        new ButtonBuilder()
-                            .setCustomId(`nabor_${subType}1`)
-                            .setLabel("Заявка на Ведущего мафии")
-                            .setStyle(ButtonStyle.Secondary),
-                        new ButtonBuilder()
-                            .setCustomId(`nabor_${subType}2`)
-                            .setLabel("Заявка на Ведущего бункера")
-                            .setStyle(ButtonStyle.Secondary)
-                    )
-                ]
-            })
+            components = new ActionRowBuilder().addComponents(
+                new ButtonBuilder()
+                    .setCustomId(`nabor_${subType}1`)
+                    .setLabel("Заявка на Ведущего мафии")
+                    .setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder()
+                    .setCustomId(`nabor_${subType}2`)
+                    .setLabel("Заявка на Ведущего бункера")
+                    .setStyle(ButtonStyle.Secondary)
+            )
+            try {
+                if ("embeds" in embed) {
+                    await interaction.reply({ ephemeral: true, ...embed, components: [components] })
+                } else {
+                    await interaction.reply({ ephemeral: true, embeds: [embed], components: [components] })
+                }
+            } catch (error) {
+                await interaction.reply({ ephemeral: true, embeds: embed, components: [components] })
+            }
         } else {
-            await interaction.reply({
-                ephemeral: true,
-                embeds: embed,
-                components: [
-                    new ActionRowBuilder().addComponents(
-                        new ButtonBuilder()
-                            .setCustomId(`nabor_${subType}`)
-                            .setLabel("ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤПодать заявкуㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ")
-                            .setStyle(ButtonStyle.Secondary)
-                    )
-                ]
-            })
+            components = new ActionRowBuilder().addComponents(
+                new ButtonBuilder()
+                    .setCustomId(`nabor_${subType}`)
+                    .setLabel("ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤПодать заявкуㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ")
+                    .setStyle(ButtonStyle.Secondary)
+            )
+            try {
+                if ("embeds" in embed) {
+                    await interaction.reply({ ephemeral: true, ...embed, components: [components] })
+                } else {
+                    await interaction.reply({ ephemeral: true, embeds: [embed], components: [components] })
+                }
+            } catch (error) {
+                await interaction.reply({ ephemeral: true, embeds: embed, components: [components] })
+            }
         }
     }
 }

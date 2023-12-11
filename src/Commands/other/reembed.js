@@ -27,7 +27,7 @@ module.exports = {
                 new ActionRowBuilder()
                     .addComponents(
                         new StringSelectMenuBuilder()
-                            .setCustomId("naborMenu_stuffRec")
+                            .setCustomId("naborMenuReem_stuffReemRec")
                             .setPlaceholder("Выбери роль, которую хочешь изменить")
                             .addOptions(
                                 new StringSelectMenuOptionBuilder()
