@@ -63,14 +63,14 @@ module.exports = {
                     .setStyle(ButtonStyle.Secondary)
             )
 
-            try {
-                if ("embeds" in embed) {
-                    await interaction.reply({ ephemeral: true, ...embed, components: [components] })
-                } else {
-                    await interaction.reply({ ephemeral: true, embeds: [embed], components: [components] })
-                }
-            } catch (error) {
-                await interaction.reply({ ephemeral: true, embeds: embed, components: [components] })
+        try {
+            if ("embeds" in embed) {
+                await interaction.reply({ ephemeral: true, ...embed, components: [components] })
+            } else {
+                await interaction.reply({ ephemeral: true, embeds: [embed], components: [components] })
             }
+        } catch (error) {
+            await interaction.reply({ ephemeral: true, embeds: embed, components: [components] })
+        }
     }
 }

@@ -2,8 +2,8 @@
 const { Client, ModalSubmitInteraction, ButtonBuilder, ButtonStyle, ActionRowBuilder, EmbedBuilder } = require('discord.js');
 
 //==========< OTHERS >==========\\
-const { ChannelID, RoleID } = require('../config.js')
 const requestsStat = require('../Structures/Models/requestsStat.js');
+const { ChannelID, RoleID } = require('../config.js')
 
 //===========================================< Code >===========================\\
 module.exports = {

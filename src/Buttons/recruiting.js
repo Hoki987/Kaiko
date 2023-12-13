@@ -19,7 +19,7 @@ module.exports = {
     async execute(client, interaction) {
         const [, subType] = interaction.customId.split('_')
         let embed;
-        console.log(interaction.customId.split('_'));
+
         switch (subType) {
             case 'ControlModRec':
                 const controlEmbed = await embedsModel.findOne({ where: { type: 'nabor_Control' } })

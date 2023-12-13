@@ -1,9 +1,10 @@
 //===========================================/ Import the modeles \===========================================\\
-const { Client, ChatInputCommandInteraction, SlashCommandBuilder, DataResolver } = require("discord.js");
-const { Op } = require("sequelize");
+const { Client, ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js");
+
 
 //==========< OTHERS >==========\\
 const blackListNabor = require('../../Structures/Models/blackListNabor.js');
+const { Op } = require("sequelize");
 
 //===========================================< Code >===========================\\
 const choices = [
