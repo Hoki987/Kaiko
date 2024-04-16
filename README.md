@@ -1,2 +1,2 @@
 # Kaiko
-Utility bot
+Utility bot for discord server META

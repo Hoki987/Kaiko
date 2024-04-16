@@ -1,8 +1,7 @@
 //===========================================< Code >===========================\\
-async function loadEvents(client, color) {
-    const { readdirSync } = require("fs");
-    client.removeAllListeners();
+const { readdirSync } = require("fs");
 
+function loadEvents(client, color) {
     console.log(`${color.bold.green(`[EVENTS]`)}` + `Started refreshing application events...`.yellow);
 
     const eventsFolders = readdirSync(`${process.cwd()}/src/Events`);
@@ -17,23 +16,22 @@ async function loadEvents(client, color) {
                     client.rest.once(events.name, (...args) => events.execute(...args, client, color));
                 } else {
                     client.rest.on(events.name, (...args) => events.execute(...args, client, color));
-                };
+                }
             } else {
                 if (events.once) {
                     client.once(events.name, (...args) => events.execute(...args, client, color));
                 } else {
                     client.on(events.name, (...args) => events.execute(...args, client, color));
-                };
-            };
-            continue;
-        };
+                }
+            }
+        }
         console.log(`${color.bold.green(`[EVENST]`)}` + `[${eventsFiles.length}]`.cyan + `in `.yellow + `${folder}`.magenta + ` Successfully loaded!`.yellow);
     }
-};
+}
 
 async function unloadEvents(client, color) {
-    client.application.events.set([]);
-    console.log(`${color.bold.green(`[EVENST]`)}` + `Successfully unloaded application events...`.yellow);
-};
+    // client.application.events.set([]);
+    // console.log(`${color.bold.green(`[EVENST]`)}` + `Successfully unloaded application events...`.yellow);
+}
 
 module.exports = { loadEvents, unloadEvents };

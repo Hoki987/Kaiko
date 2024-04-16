@@ -25,6 +25,7 @@ module.exports = {
 
     async execute(client, interaction) {
         let embed;
+        let customLabel;
         const [, type] = interaction.customId.split("_");
         const [, subType] = interaction.values[0].split("_");
 
@@ -52,16 +53,11 @@ module.exports = {
         if (type === "stuffNaborMain") {
             switch (subType) {
                 case "ControlModNab":
+                    customLabel = ["Заявка на Модератора войсов", "Заявка на модератора чатов"]
                     const controlEmbed = await embedsModel.findOne({
                         where: { type: "nabor_Control" },
                     });
                     embed = JSON.parse(controlEmbed.embed);
-                    break;
-                case "AssistModNab":
-                    const assistEmbed = await embedsModel.findOne({
-                        where: { type: "nabor_Assist" },
-                    });
-                    embed = JSON.parse(assistEmbed.embed);
                     break;
                 case "EventModNab":
                     const eventEmbed = await embedsModel.findOne({
@@ -70,6 +66,7 @@ module.exports = {
                     embed = JSON.parse(eventEmbed.embed);
                     break;
                 case "MafiaModNab":
+                    customLabel = ["Заявка на Ведущего мафии", "Заявка на Ведущего бункера"]
                     const mafiaEmbed = await embedsModel.findOne({
                         where: { type: "nabor_Mafia" },
                     });
@@ -96,15 +93,15 @@ module.exports = {
             }
         }
         let components;
-        if (subType === "MafiaModNab") {
+        if (['MafiaModNab', 'ControlModNab'].includes(subType)) {
             components = new ActionRowBuilder().addComponents(
                 new ButtonBuilder()
                     .setCustomId(`nabor_${subType}1`)
-                    .setLabel("Заявка на Ведущего мафии")
+                    .setLabel(customLabel[0])
                     .setStyle(ButtonStyle.Secondary),
                 new ButtonBuilder()
                     .setCustomId(`nabor_${subType}2`)
-                    .setLabel("Заявка на Ведущего бункера")
+                    .setLabel(customLabel[1])
                     .setStyle(ButtonStyle.Secondary)
             );
         } else {

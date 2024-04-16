@@ -17,7 +17,6 @@ module.exports = {
 
     async execute(client, interaction) {
         const [, type, subType] = interaction.customId.split('_')
-        let embed;
         switch (type) {
             case 'edit':
                 await interaction.showModal(
@@ -36,31 +35,15 @@ module.exports = {
                 )
                 break;
             case 'get':
-                let embedType;
-                switch (subType) {
-                    case 'ControlReemRec':
-                        embedType = 'nabor_Control'
-                        break;
-                    case 'AssistReemRec':
-                        embedType = 'nabor_Assist'
-                        break;
-                    case 'EventReemRec':
-                        embedType = 'nabor_Event'
-                        break;
-                    case 'MafiaReemRec':
-                        embedType = 'nabor_Mafia'
-                        break;
-                    case 'CloseReemRec':
-                        embedType = 'nabor_Close'
-                        break;
-                    case 'CreativeReemRec':
-                        embedType = 'nabor_Creative'
-                        break;
-                    case 'ContentReemRec':
-                        embedType = 'nabor_Contenter'
-                        break;
+                const dictionary = {
+                    'ControlReemRec': 'nabor_Control',
+                    'EventReemRec': 'nabor_Event',
+                    'MafiaReemRec': 'nabor_Mafia',
+                    'CloseReemRec': 'nabor_Close',
+                    'CreativeReemRec': 'nabor_Creative',
+                    'ContentReemRec': 'nabor_Contenter'
                 }
-                const findEmbed = await embedsModel.findOne({ where: { type: embedType } })
+                const findEmbed = await embedsModel.findOne({ where: { type: dictionary[subType] } });
                 await interaction.reply({
                     ephemeral: true,
                     embeds: [new EmbedBuilder().setTitle('Эмбед').setDescription('```json\n' + `${JSON.stringify(JSON.parse(findEmbed.embed), null, 2)}` + '\n```')]

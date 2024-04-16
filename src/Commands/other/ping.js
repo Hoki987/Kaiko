@@ -50,6 +50,6 @@ module.exports = {
 
         } catch (error) {
             console.log(`${color.bold.red(`[COMMAND > PING : ERROR]`)}` + `${error}.`.bgRed);
-        };
+        }
     }
 };

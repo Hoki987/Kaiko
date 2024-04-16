@@ -37,7 +37,7 @@ module.exports = {
                 })
             }
         } catch (error) {
-            return await interaction.reply({
+            return interaction.reply({
                 ephemeral: true,
                 content: 'Эмбед сформирован неверно!'
             })

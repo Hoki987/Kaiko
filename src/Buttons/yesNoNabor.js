@@ -21,12 +21,11 @@ module.exports = {
         let color;
         let content = [];
         switch (subType) {
-            case 'ControlModNab':
-                content.push('Контрола')
+            case 'ControlModNab1':
+                content.push('Модератора войсов')
                 break;
-            case 'AssistModNab':
-                content.push('Ассистента')
-                break;
+            case 'ControlModNab2':
+                content.push('Модератора чатов')
             case 'EventModNab':
                 content.push('Ивентера')
                 break;
@@ -63,7 +62,7 @@ module.exports = {
             embeds: [{ ...interaction.message.embeds[0].data, color: color }],
             components: [{ components: [{ ...interaction.message.components[0].components[0].data, disabled: true }, { ...interaction.message.components[0].components[1].data, disabled: true }] }]
         })
-        client.users.cache.get(executor).send({
+        await client.users.cache.get(executor)?.send({
             embeds: [new EmbedBuilder()
                 .setAuthor({ name: `Исполнитель: ${interaction.user.username} | ${interaction.user.id}`, iconURL: interaction.user.displayAvatarURL() })
                 .setDescription(`${content[2]}\n${content[3]}`)

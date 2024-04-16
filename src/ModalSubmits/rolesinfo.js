@@ -48,7 +48,8 @@ module.exports = {
                 label = ['Ваше имя и возраст', 'Были ли у вас муты/варны/баны', 'Точная дата присоединения к серверу']
                 break;
         }
-        if (label.length > 0) {
+
+        if (label.length === 1) {
             client.channels.cache.get(channelRequest).send({
                 embeds: [embed.setFields(
                     { name: label[0], value: `\`\`\`${interaction.fields.getTextInputValue('modalRolesInfo_Input1')}\`\`\`` }

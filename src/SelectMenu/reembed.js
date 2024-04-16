@@ -25,10 +25,6 @@ module.exports = {
                     const controlEmbed = await embedsModel.findOne({ where: { type: 'nabor_Control' } })
                     embed = JSON.parse(controlEmbed.embed)
                     break;
-                case 'AssistReemRec':
-                    const assistEmbed = await embedsModel.findOne({ where: { type: 'nabor_Assist' } })
-                    embed = JSON.parse(assistEmbed.embed)
-                    break;
                 case 'EventReemRec':
                     const eventEmbed = await embedsModel.findOne({ where: { type: 'nabor_Event' } })
                     embed = JSON.parse(eventEmbed.embed)

@@ -18,68 +18,71 @@ module.exports = {
 
     async execute(client, interaction) {
         const [, subType] = interaction.customId.split('_')
-        let embed;
-
-        switch (subType) {
-            case 'ControlModRec':
-                const controlEmbed = await embedsModel.findOne({ where: { type: 'nabor_Control' } })
-                embed = JSON.parse(controlEmbed.embed)
-                break;
-            case 'AssistModRec':
-                const assistEmbed = await embedsModel.findOne({ where: { type: 'nabor_Assist' } })
-                embed = JSON.parse(assistEmbed.embed)
-                break;
-            case 'EventModRec':
-                const eventEmbed = await embedsModel.findOne({ where: { type: 'nabor_Event' } })
-                embed = JSON.parse(eventEmbed.embed)
-                break;
-            case 'MafiaModRec':
-                const mafiaEmbed = await embedsModel.findOne({ where: { type: 'nabor_Mafia' } })
-                embed = JSON.parse(mafiaEmbed.embed)
-                break;
-            case 'CloseModRec':
-                const closeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Close' } })
-                embed = JSON.parse(closeEmbed.embed)
-                break;
-            case 'CreativeModRec':
-                const creativeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Creative' } })
-                embed = JSON.parse(creativeEmbed.embed)
-                break;
-            case 'ContentModRec':
-                const contenterEmbed = await embedsModel.findOne({ where: { type: 'nabor_Contenter' } })
-                embed = JSON.parse(contenterEmbed.embed)
-                break;
+        const recruitMap = new Map();
+        let components;
+        const dictionary = {
+            'ControlModNab': 'nabor_Control',
+            'EventModNab': 'nabor_Event',
+            'MafiaModNab': 'nabor_Mafia',
+            'CloseModNab': 'nabor_Close',
+            'CreativeModNab': 'nabor_Creative',
+            'ContentModNab': 'nabor_Contenter'
         }
+        const findEmbed = await embedsModel.findOne({ where: { type: dictionary[subType] } })
+        const embed = JSON.parse(findEmbed.embed);
 
-        if ('embeds' in embed) {
-            client.channels.cache.get(ChannelID.Nabor).send({
-                content: `<@&${RoleID.AnNabor}>`,
-                ...embed,
-                components: [
-                    new ActionRowBuilder()
-                        .addComponents(
-                            new ButtonBuilder()
-                                .setCustomId(`nabor_${subType}`)
-                                .setLabel("ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤПодать заявкуㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ")
-                                .setStyle(ButtonStyle.Secondary),
-                        )
-                ]
-            })
+        recruitMap.set('ControlModNab', {
+            label: ["Заявка на Модератора войсов", "Заявка на Модератора чатов"],
+        })
+
+        recruitMap.set('MafiaModNab', {
+            label: ["Заявка на Ведущего мафии", "Заявка на Ведущего бункера"],
+
+        })
+
+        const recruit = recruitMap.get(subType);
+
+        if (["ControlModNab", "MafiaModNab"].includes(subType)) {
+            components = new ActionRowBuilder().addComponents(
+                new ButtonBuilder()
+                    .setCustomId(`nabor_${subType}1`)
+                    .setLabel(recruit.label[0])
+                    .setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder()
+                    .setCustomId(`nabor_${subType}2`)
+                    .setLabel(recruit.label[1])
+                    .setStyle(ButtonStyle.Secondary)
+            );
         } else {
-            client.channels.cache.get(ChannelID.Nabor).send({
+            components = new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                        .setCustomId(`nabor_${subType}`)
+                        .setLabel("ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤПодать заявкуㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ")
+                        .setStyle(ButtonStyle.Secondary),
+                )
+        }
+        try {
+            if ('embeds' in embed) {
+                await client.channels.cache.get(ChannelID.Nabor).send({
+                    ...embed,
+                    content: `<@&${RoleID.AnNabor}>`,
+                    components: [components]
+                });
+            } else {
+                await client.channels.cache.get(ChannelID.Nabor).send({
+                    content: `<@&${RoleID.AnNabor}>`,
+                    embeds: [embed],
+                    components: [components]
+                });
+            }
+        } catch (error) {
+            await client.channels.cache.get(ChannelID.Nabor).send({
                 content: `<@&${RoleID.AnNabor}>`,
                 embeds: embed,
-                components: [
-                    new ActionRowBuilder()
-                        .addComponents(
-                            new ButtonBuilder()
-                                .setCustomId(`nabor_${subType}`)
-                                .setLabel("ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤПодать заявкуㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ")
-                                .setStyle(ButtonStyle.Secondary),
-                        )
-                ]
+                components: [components]
             })
         }
-        await interaction.reply({ ephemeral: true, content: "Набор успешно отправлен!" })
+        await interaction.reply({ ephemeral: true, content: "Набор успешно отправлен!" });
     }
 }

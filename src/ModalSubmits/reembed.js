@@ -23,9 +23,6 @@ module.exports = {
                 case 'ControlReemRec':
                     embedType = 'nabor_Control'
                     break;
-                case 'AssistReemRec':
-                    embedType = 'nabor_Assist'
-                    break;
                 case 'EventReemRec':
                     embedType = 'nabor_Event'
                     break;

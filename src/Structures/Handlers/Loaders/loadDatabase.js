@@ -8,6 +8,6 @@ async function loadDatabase(client, color) {
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
-};
+}
 
 module.exports = { loadDatabase };

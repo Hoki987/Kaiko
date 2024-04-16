@@ -31,13 +31,9 @@ module.exports = {
                             .setPlaceholder("Выбери роль, которую хочешь изменить")
                             .addOptions(
                                 new StringSelectMenuOptionBuilder()
-                                    .setLabel("Контрол")
+                                    .setLabel("Модератор")
                                     .setEmoji(Emoji.NaborControl)
                                     .setValue("select_ControlReemRec"),
-                                new StringSelectMenuOptionBuilder()
-                                    .setLabel("Ассистент")
-                                    .setEmoji(Emoji.NaborAssist)
-                                    .setValue("select_AssistReemRec"),
                                 new StringSelectMenuOptionBuilder()
                                     .setLabel("Ивентер")
                                     .setEmoji(Emoji.NaborEvent)

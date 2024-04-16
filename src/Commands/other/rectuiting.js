@@ -31,33 +31,29 @@ module.exports = {
                             .setPlaceholder("Выбери роль для набора")
                             .addOptions(
                                 new StringSelectMenuOptionBuilder()
-                                    .setLabel("Контрол")
+                                    .setLabel("Модератор")
                                     .setEmoji(Emoji.NaborControl)
-                                    .setValue("select_ControlModRec"),
-                                new StringSelectMenuOptionBuilder()
-                                    .setLabel("Ассистент")
-                                    .setEmoji(Emoji.NaborAssist)
-                                    .setValue("select_AssistModRec"),
+                                    .setValue("select_ControlModNab"),
                                 new StringSelectMenuOptionBuilder()
                                     .setLabel("Ивентер")
                                     .setEmoji(Emoji.NaborEvent)
-                                    .setValue("select_EventModRec"),
+                                    .setValue("select_EventModNab"),
                                 new StringSelectMenuOptionBuilder()
                                     .setLabel("Ведущий")
                                     .setEmoji(Emoji.NaborMafia)
-                                    .setValue("select_MafiaModRec"),
+                                    .setValue("select_MafiaModNab"),
                                 new StringSelectMenuOptionBuilder()
                                     .setLabel("Клозер")
                                     .setEmoji(Emoji.NaborClose)
-                                    .setValue("select_CloseModRec"),
+                                    .setValue("select_CloseModNab"),
                                 new StringSelectMenuOptionBuilder()
                                     .setLabel("Креатив")
                                     .setEmoji(Emoji.NaborCreative)
-                                    .setValue("select_CreativeModRec"),
+                                    .setValue("select_CreativeModNab"),
                                 new StringSelectMenuOptionBuilder()
                                     .setLabel("Контентер")
                                     .setEmoji(Emoji.NaborContent)
-                                    .setValue("select_ContentModRec")
+                                    .setValue("select_ContentModNab")
                             )
                     )
             ]

@@ -29,15 +29,10 @@ module.exports = {
                         .setPlaceholder("Выбери интересующую тебя роль")
                         .addOptions(
                             new StringSelectMenuOptionBuilder()
-                                .setLabel("Контрол")
+                                .setLabel("Модератор")
                                 .setEmoji(Emoji.NaborControl)
-                                .setDescription("Модерация войсов.")
+                                .setDescription("Контроль порядка на сервере.")
                                 .setValue("naborMenuselect_ControlModNab"),
-                            new StringSelectMenuOptionBuilder()
-                                .setLabel("Ассистент")
-                                .setEmoji(Emoji.NaborAssist)
-                                .setDescription("Модерация чатов.")
-                                .setValue("naborMenuselect_AssistModNab"),
                             new StringSelectMenuOptionBuilder()
                                 .setLabel("Ивентер")
                                 .setEmoji(Emoji.NaborEvent)

@@ -21,31 +21,27 @@ module.exports = {
         const [, subType] = interaction.values[0].split('_')
         if (type === 'stuffRecruiting') {
             switch (subType) {
-                case 'ControlModRec':
+                case 'ControlModNab':
                     const controlEmbed = await embedsModel.findOne({ where: { type: 'nabor_Control' } })
                     embed = JSON.parse(controlEmbed.embed)
                     break;
-                case 'AssistModRec':
-                    const assistEmbed = await embedsModel.findOne({ where: { type: 'nabor_Assist' } })
-                    embed = JSON.parse(assistEmbed.embed)
-                    break;
-                case 'EventModRec':
+                case 'EventModNab':
                     const eventEmbed = await embedsModel.findOne({ where: { type: 'nabor_Event' } })
                     embed = JSON.parse(eventEmbed.embed)
                     break;
-                case 'MafiaModRec':
+                case 'MafiaModNab':
                     const mafiaEmbed = await embedsModel.findOne({ where: { type: 'nabor_Mafia' } })
                     embed = JSON.parse(mafiaEmbed.embed)
                     break;
-                case 'CloseModRec':
+                case 'CloseModNab':
                     const closeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Close' } })
                     embed = JSON.parse(closeEmbed.embed)
                     break;
-                case 'CreativeModRec':
+                case 'CreativeModNab':
                     const creativeEmbed = await embedsModel.findOne({ where: { type: 'nabor_Creative' } })
                     embed = JSON.parse(creativeEmbed.embed)
                     break;
-                case 'ContentModRec':
+                case 'ContentModNab':
                     const contenterEmbed = await embedsModel.findOne({ where: { type: 'nabor_Contenter' } })
                     embed = JSON.parse(contenterEmbed.embed)
                     break;

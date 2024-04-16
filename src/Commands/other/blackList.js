@@ -9,8 +9,8 @@ const { Op } = require("sequelize");
 //===========================================< Code >===========================\\
 const choices = [
     { name: 'Все категории', value: 'all' },
-    { name: 'Контролы', value: 'ControlModNab' },
-    { name: 'Ассисты', value: 'AssistModNab' },
+    { name: 'Модераторы войсов', value: 'ControlModNab1' },
+    { name: 'Модераторы чатов', value: 'ControlModNab2' },
     { name: 'Ивентеры', value: 'EventModNab' },
     { name: 'Ведущие', value: 'MafiaModNab' },
     { name: 'Клозеры', value: 'CloseModNab' },

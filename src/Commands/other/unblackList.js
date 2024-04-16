@@ -1,5 +1,5 @@
 //===========================================/ Import the modeles \===========================================\\
-const { Client, ChatInputCommandInteraction, SlashCommandBuilder, DataResolver, EmbedBuilder } = require("discord.js");
+const { Client, ChatInputCommandInteraction, SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 const { Op } = require("sequelize");
 
 //==========< OTHERS >==========\\
@@ -31,7 +31,7 @@ module.exports = {
                     where: {
                         id: findActiveBan.id
                     }
-                }) && client.users.cache.get(findActiveBan.target).send({
+                }) && await client.users.cache.get(findActiveBan.target)?.send({
                     embeds: [new EmbedBuilder()
                         .setDescription("\`\`\`Вам вернули доступ в заявки\`\`\`")
                         .setFooter({ text: `Выполнил: ${interaction.user.username} | ${interaction.user.id}`, iconURL: interaction.user.displayAvatarURL() })]

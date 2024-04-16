@@ -2,19 +2,19 @@ const ChannelID = {
     META: "822354240713261068",
     Nabor: "993248594222121010",
 
-    Control: '1105057109931999314',
-    Assist: '1139556229329453276',
+    Control: '1193838662769717280',
+    Assist: '1193838584130703442',
     Event: '1104880050131718324',
     Mafia: '1121401565278912664',
     Bunker: '1121401565278912664',
-    Close: '1104880073208766514',
+    Close: '1187275347406880839',
     Creative: '1104757507940945961',
     Content: '1104758098800939089',
 
     EruditRequest: '1117201936484151388',
-    CloseRoleRequest: '1117481470244687953',
+    CloseRoleRequest: '1187276450253000765',
     MafiaRoleRequest: '1117202216613322783',
-    CloudRequest: '1105057345245032568',
+    CloudRequest: '1193838993972924477',
     DabberRequest: '1121400490819866676',
     MusicRequest: '1121400324318568559',
     PainterRequest: '1121400365649244221',
@@ -43,7 +43,7 @@ const Url = {
 
 const RoleID = {
     ControlMentor: '1104781018545795076',
-    AssistMentor: '1139541695638286346',
+    AssistMentor: '1194551206610206720',
     EventMentor: '1104927450296758272',
     MafiaMentor: '1105499116156493854',
     BunkerMentor: '1105499116156493854',
@@ -56,7 +56,6 @@ const RoleID = {
     Valorant: "867411593351397376",
     Minecraft: "867411616822591528",
     Lol: "1141778163576340500",
-    acquaintance: '1143698939397292082',
 
     AnNabor: "866391559510163467",
     AnKino: "939304687486779412",
@@ -73,13 +72,12 @@ const Emoji = {
     PanelCMD: "<:META_utility:1105566989981847553>",
     PanelUtility: "<:META_cmd:1105566988748718230>",
 
-    NaborControl: "<:control:1140293465478004837>",
-    NaborAssist: "<:assist:1139696339337363456>",
-    NaborEvent: "<:eventsmod:1139696149935173702>",
-    NaborMafia: "<:ved:1139696198031249498>",
-    NaborClose: "<:closer:1140293461745074176>",
-    NaborCreative: "<:creative:1139696286149390376>",
-    NaborContent: "<:kontent:1139696547437744211>",
+    NaborControl: "<:moderator:1185846595057618965>",
+    NaborEvent: "<:event:1185846534634479678>",
+    NaborMafia: "<:vedi:1185846532927406081>",
+    NaborClose: "<:closer:1185846538266750988>",
+    NaborCreative: "<:creative:1185846528712122438>",
+    NaborContent: "<:contenter:1185846541257285692>",
 
     Trash: "<:trashMeta:1110528689235574938>",
 
@@ -89,7 +87,7 @@ const Emoji = {
     CSGO: "<:CSGOMETA1:1110517992829239296>",
     LOL: "<:LoLMeta:1110512151388504144>",
 
-    Ruchki: "<:handshakingMeta:1110504044495130666>",
+    Ruchki: "<:ruchki:1141100696926695524>",
     Cloudy: "<:oblachko:1140293645707247727>",
     Erydit: "<:brainEvent:1140293649159180328>",
     VHSClose: "<:vhsClose:1140293630012174356>",
